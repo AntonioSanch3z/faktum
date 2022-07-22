@@ -1,4 +1,32 @@
-#map0, #map1 {
+/*#map0, #map1 {
     height: 768px;
     width: 579px;
-  }
+    /*height: 50vh;
+    width: 37.7vw;*
+  }*/
+
+  
+/*#map0, #map1 {
+    position: absolute;
+    width: 40%;
+    height: 50%;
+}*/
+
+.bk {
+  background-color: aquamarine;
+}
+
+/* Triggered when screen size becomes <=990px */
+@media (max-width: 990px) {
+  buttonGroup {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+  } /*d-grid if lg, d-flex if sm*/
+} /*690 se deberia mostrar un mapa*/
+
+
+
+/*
+579/768 = 0,75390625
+*/

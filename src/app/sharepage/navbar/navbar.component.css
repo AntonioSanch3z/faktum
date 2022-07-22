@@ -35,6 +35,13 @@ a {
   }
 }
 
+/* Triggered when screen size becomes <=345px */
+@media (max-width: 363px) {
+  .navbar {
+    padding-right: 5px;
+  }
+}
+
 /*** Log in ***/
 
 input {
