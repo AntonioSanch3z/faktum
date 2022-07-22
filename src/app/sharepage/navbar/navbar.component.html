@@ -1,0 +1,50 @@
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="d-flex align-items-center flex-row">
+        <a class="navbar-brand active banner" routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+            <img src="src\assets\img\logo.png" width="30" height="24">
+            <span class="d-none d-md-block display-6 text-primary"> Faktum<span class="text-secondary">LAB</span></span>
+        </a>
+    </div>
+        <div class="d-flex align-items-center flex-row-reverse">
+            <a href="#" routerLinkActive="active-link" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-box-arrow-in-right d-block d-md-none"></i><span class="d-none d-md-block"> Log in</span></a>
+            <a routerLink="about" routerLinkActive="active-link" class="nav-link"><i class="bi bi-info-circle-fill d-block d-md-none"></i><span class="d-none d-md-block"> About</span></a>
+            <a routerLink="map" routerLinkActive="active-link" class="nav-link"><i class="bi bi-map-fill d-block d-md-none"></i><span class="d-none d-md-block"> Map</span></a>     
+        </div>
+        <!-- Offcanvas -->
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h2 id="offcanvasRightLabel" class="login-title">Log in</h2>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+               <!-- Form -->
+                <div>
+                    <form>
+                        <div>
+                            <label class="form-control-label">USERNAME</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div>
+                            <label class="form-control-label">PASSWORD</label>
+                            <input type="password" class="form-control" i>
+                        </div>
+                        <div class="loginbttm">
+                            <div class="login-btm login-text">
+                                <!-- Error Message -->
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-outline-primary">LOG IN</button>
+                            </div>
+                            <div class="row">
+                                <p>Don't have an account? <a href="#">Register</a></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Form end -->
+            </div>
+        <!-- Offcanvas end -->
+    </div>
+</nav>

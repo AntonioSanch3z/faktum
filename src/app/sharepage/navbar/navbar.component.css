@@ -1,0 +1,99 @@
+.navbar {
+  margin-bottom: 40px;
+  padding-right: 20px;
+}
+
+.active-link {
+  font-weight: bold;
+}
+
+a {
+  margin: 10px 20px;
+  padding: 10px 20px;
+  font-size: 17;
+  font-weight: 400;
+  /*background-color: #0DB8DE;*/
+}
+
+.banner {
+  display: inline-flex;
+}
+
+/* Triggered when screen size becomes <=480px */
+@media (max-width: 480px) {
+  a {
+    margin: 7px 15px;
+    padding: 7px 15px;
+  }
+}
+
+/* Triggered when screen size becomes <=345px */
+@media (max-width: 345px) {
+  a {
+    margin: 5px 10px;
+    padding: 5px 10px;
+  }
+}
+
+/*** Log in ***/
+
+input {
+  background-color: #1A2226;
+  border: none;
+  border-bottom: 2px solid #0DB8DE;
+  border-top: 0px;
+  border-radius: 0px;
+  font-weight: bold;
+  outline: 0;
+  margin-bottom: 20px;
+  padding-left: 0px;
+  color: #ECF0F5;
+}
+
+
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 2px solid #0DB8DE;
+  outline: 0;
+  background-color: #1A2226;
+  color: #ECF0F5;
+}
+
+
+.form-control-label {
+  font-size: 10px;
+  color: #6C6C6C;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.btn-outline-primary {
+  border-color: #0DB8DE;
+  color: #0DB8DE;
+  border-radius: 0px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.btn-outline-primary:hover {
+  background-color: #0DB8DE;
+  right: 0px;
+}
+
+/*** Error msg ***/
+.login-text {
+  text-align: left;
+  padding-left: 0px;
+  color: #A2A4A4;
+}
+
+
+/*
+A partir de 400 que se expandan los iconos
+XSmall (mobile): max-width: 599.98px
+Small (tablet): (min-width: 600px) and (max-width: 959.98px)
+Medium (pc): (min-width: 960px)
+*/
