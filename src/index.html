@@ -25,4 +25,12 @@
 <body>
   <app-root></app-root>
 </body>
+
+<script>
+    function changeMapId(clicked_id) {
+    var getId = document.getElementsByClassName('changeMap')[0].id;
+    getId = 'map' + Number('clicked_id');
+    console.log(getId)
+    }
+</script>
 </html>

@@ -1,17 +1,17 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-2 order-lg-3 d-lg-grid d-flex buttonGroup">
-            <button class="d-block d-sm-none">Sin estilo</button>
-            <button>Dia uno</button>
-            <button>Dia dos</button>
-            <button>Dia tres</button>
-            <button>Datos</button>
+            <button id="0" onclick="changeMapId(this.id)" class="d-block d-sm-none">Sin estilo</button>
+            <button id="1" onclick="changeMapId(this.id)">Dia uno</button>
+            <button id="2" onclick="changeMapId(this.id)">Dia dos</button>
+            <button id="3" onclick="changeMapId(this.id)">Dia tres</button>
+            <button >Datos</button>
         </div>
         <div class="col-sm-6 col-lg-5 d-none d-sm-block">
-            <div id="map0" class="bk"></div>
+            <div id="map0"></div>
         </div>
         <div class="col-sm-6 col-lg-5">
-            <div id="map1" class="bk"></div>
+            <div class="bk changeMap"></div>
         </div>
     </div>
 </div>
