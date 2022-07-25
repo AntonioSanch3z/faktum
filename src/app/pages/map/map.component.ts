@@ -19,7 +19,7 @@ export class MapComponent implements OnInit {
 
     const map1 = new Map('map1').setView([39.46, -0.37], 13);
     tileLayer(
-      'https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoib2xpdmllcmMiLCJhIjoiY2s5dnNnZWoyMDIzNDNzb2Y1dmQ4MGNtMCJ9.m4U-wYcS4EPcKe9nVXIbUA',
+      'http://localhost:8080/geoserver/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv4&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=application/openlayers',
       {
         maxZoom: 20,
         attribution: 'Dia uno',
@@ -43,4 +43,10 @@ http://localhost:8080/geoserver/tfg/wms?service=WMS&version=1.1.0&request=GetMap
 
 cv2 (diaTres)
 http://localhost:8080/geoserver/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv2&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=application/openlayers
+
+
+El bloqueo de lectura entre orígenes (CORB) ha bloqueado la respuesta entre orígenes 
+http://localhost:8080/geoserver/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv4&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=application/openlayers
+ con tipo MIME text/html. Consulte https://www.chromestatus.com/feature/5629709824032768 
+ para obtener más detalles.
 */
