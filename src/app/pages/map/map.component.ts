@@ -1,59 +1,53 @@
-import { Component, OnInit } from '@angular/core';
-import { Map, tileLayer } from 'leaflet';
+import { AfterViewInit, Component } from '@angular/core';
+import * as L from 'leaflet';
+import { Map } from 'leaflet';
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements AfterViewInit {
 
   constructor() { }
 
 
-  ngOnInit(): void {
+  ngAfterViewInit() {
+    var url0 = 'https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png';
+    var url1 = 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
+    var url2 = 'https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png';
+    var url3 = 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png';
 
-    /*document.querySelector('#1')?.addEventListener('click', () => {
-      document.querySelector
-    })*/
-    function changeMapId(clicked_id: number) {
-      var getId = document.getElementsByClassName('changeMap')[0].id;
-      getId = 'map' + Number('clicked_id');
-      console.log(getId)
-      }
       
     const map0 = new Map('map0').setView([39.46, -0.37], 13);
-    tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 20,
-      attribution: 'Sin estilo',
-    }).addTo(map0);
+    L.tileLayer(url0, { maxZoom: 20, attribution: 'Sin estilo' }).addTo(map0);
 
     const map1 = new Map('map1').setView([39.46, -0.37], 13);
-    tileLayer(
-      'http://localhost:8080/geoserver/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv1&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=application/openlayers',
-      {
-        maxZoom: 20,
-        attribution: 'Dia uno',
-      }
-    ).addTo(map1);
+    var map1Layer = L.tileLayer(url1, { maxZoom: 20, attribution: 'Día uno' }).addTo(map1);
 
-    const map2 = new Map('map2').setView([39.46, -0.37], 13);
-    tileLayer(
-      'http://localhost:8080/geoserver/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv2&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=application/openlayers',
-      {
-        maxZoom: 20,
-        attribution: 'Dia dos',
-      }
-    ).addTo(map2);
+    var boton0 = document.getElementById('0')
+    boton0!.addEventListener("click", function() {
+      map1.removeLayer(map1Layer);
+      map1Layer = L.tileLayer(url0, { maxZoom: 20, attribution: 'Sin estilo' }).addTo(map1);
+    })
 
-    const map3 = new Map('map3').setView([39.46, -0.37], 13);
-    tileLayer(
-      'http://localhost:8080/geoserver/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv3&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=application/openlayers',
-      {
-        maxZoom: 20,
-        attribution: 'Dia tres',
-      }
-    ).addTo(map3);
+    var boton1 = document.getElementById('1')
+    boton1!.addEventListener("click", function() {
+      map1.removeLayer(map1Layer);
+      map1Layer = L.tileLayer(url1, { maxZoom: 20, attribution: 'Día uno' }).addTo(map1);
+    })
+
+    var boton2 = document.getElementById('2')
+    boton2!.addEventListener("click", function() {
+      map1.removeLayer(map1Layer);
+      map1Layer = L.tileLayer(url2, { maxZoom: 20, attribution: 'Día dos' }).addTo(map1);
+    })
+
+    var boton3 = document.getElementById('3')
+    boton3!.addEventListener("click", function() {
+      map1.removeLayer(map1Layer);
+      map1Layer = L.tileLayer(url3, { maxZoom: 20, attribution: 'Día tres' }).addTo(map1);
+    })
 
   }
 }

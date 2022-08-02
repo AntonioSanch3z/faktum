@@ -1,5 +1,5 @@
 .navbar {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   padding-right: 20px;
 }
 
@@ -12,7 +12,6 @@ a {
   padding: 10px 20px;
   font-size: 17;
   font-weight: 400;
-  /*background-color: #0DB8DE;*/
 }
 
 .banner {
@@ -41,6 +40,7 @@ a {
     padding-right: 5px;
   }
 }
+
 
 /*** Log in ***/
 
@@ -96,11 +96,3 @@ input {
   padding-left: 0px;
   color: #A2A4A4;
 }
-
-
-/*
-A partir de 400 que se expandan los iconos
-XSmall (mobile): max-width: 599.98px
-Small (tablet): (min-width: 600px) and (max-width: 959.98px)
-Medium (pc): (min-width: 960px)
-*/
