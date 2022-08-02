@@ -4,18 +4,32 @@
     /*height: 50vh;
     width: 37.7vw;*
   }*/
-
-  
+/*
+579/768 = 0,75390625
+*/
 /*#map0, #map1 {
     position: absolute;
     width: 40%;
     height: 50%;
 }*/
 
-.bk {
-  background-color: aquamarine;
+#map0, #map1 {
   height: 600px;
+  margin-top: 20px;
 }
+
+/* Triggered when screen size becomes >=990px */
+@media (min-width: 990px) {
+  .buttonGroup {
+      padding: 50px 5px;
+      margin-top: 20px;
+    }
+
+    .dayBtn {
+      margin: 10px;
+    }
+}
+
 
 /* Triggered when screen size becomes <=990px */
 @media (max-width: 990px) {
@@ -23,11 +37,28 @@
     display: inline-block;
     position: relative;
     width: 100%;
-  } /*d-grid if lg, d-flex if sm*/
+  }
+  .dayBtn {
+    margin: 10px;
+  }
 } /*690 se deberia mostrar un mapa*/
 
+.btnStl {
+  background: #fff;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  font-weight: 600;
+  border: 3px solid;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
 
-
-/*
-579/768 = 0,75390625
-*/
+.btnStl:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}

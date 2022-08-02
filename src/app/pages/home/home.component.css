@@ -1,6 +1,5 @@
 .container {
     background-color: rgba(0, 0, 0, 0.5);
-    background-image: url('src\assets\img\cval.jpg');
     height: 100vh;
     overflow: hidden;
     background-position: center;

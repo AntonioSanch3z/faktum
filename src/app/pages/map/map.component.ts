@@ -14,7 +14,7 @@ export class MapComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     var url0 = 'https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png';
-    var url1 = 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
+    var url1 = 'http://localhost:8080/geoserver/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv2&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=image%2Fpng';
     var url2 = 'https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png';
     var url3 = 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png';
 
