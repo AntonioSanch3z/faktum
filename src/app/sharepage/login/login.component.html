@@ -1,0 +1,39 @@
+ <!-- Offcanvas -->
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1"
+    id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h2 id="offcanvasRightLabel" class="login-title">Log in</h2>
+        <button type="button" class="btn-close text-reset"
+            data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <!-- Form -->
+        <div>
+            <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+                <div>
+                    <label class="form-control-label">USERNAME</label>
+                    <input type="text" name="username" class="form-control"
+                        required ngModel>
+                </div>
+                <div>
+                    <label class="form-control-label">PASSWORD</label>
+                    <input type="password" name="password" class="form-control"
+                        required ngModel>
+                </div>
+                <div class="loginbttm">
+                    <div class="login-btm login-text">
+                        <!-- Error Message -->
+                    </div>
+                    <div>
+                        <button [disabled]="!loginForm.valid" type="submit"
+                            class="btn btn-outline-primary">LOG IN</button>
+                    </div>
+                    <div class="row">
+                        <p>Don't have an account? <a href="#">Register</a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Form end -->
+    </div>
+    <!-- Offcanvas end -->

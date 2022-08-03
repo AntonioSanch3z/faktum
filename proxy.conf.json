@@ -1,6 +1,6 @@
 {
-    "/geoserver/*":{
-        "target":"http://localhost:8080",
+    "/tfg/*":{
+        "target":"http://localhost:8080/geoserver",
         "secure": false,
         "logLevel":"debug",
         "changeOrigin":true
