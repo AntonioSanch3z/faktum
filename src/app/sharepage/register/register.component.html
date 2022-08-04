@@ -1,0 +1,44 @@
+ <!-- Offcanvas -->
+ <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1"
+ id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+ <div class="offcanvas-header">
+     <h2 id="offcanvasRightLabel" class="login-title">Register</h2>
+     <button type="button" class="btn-close text-reset"
+         data-bs-dismiss="offcanvas" aria-label="Close"></button>
+ </div>
+ <div class="offcanvas-body">
+     <!-- Form -->
+     <div>
+         <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+             <div class="form-group">
+                 <label for="username" class="form-label">USERNAME</label>
+                 <input type="text" class="form-control" formControlName="username">
+                 <span *ngIf="!username.valid && (username.touched || userSubmitted)" class="error-block">Please enter an username</span>
+             </div>
+             <div>
+                 <label for="password" class="form-label">PASSWORD</label>
+                 <input type="password" class="form-control" formControlName="password">
+                 <span *ngIf="!password.valid && (username.touched || userSubmitted)" class="error-block">Please enter a password</span>
+             </div>
+             <div>
+                <label for="confirmPassword" class="form-label">CONFIRM PASSWORD</label>
+                <input type="password" class="form-control" formControlName="confirmPassword">
+                <span *ngIf="!confirmPassword.valid && (username.touched || userSubmitted)">
+                    <span *ngIf="confirmPassword.hasError('required')">Please confirm the pasword</span>
+                </span>
+                <span *ngIf="registrationForm.hasError('notmatched') && confirmPassword.valid">Passwords don't match</span>
+            </div>
+             <div class="loginbttm">
+                 <div>
+                     <button [disabled]="!registrationForm.valid" type="submit"
+                         class="btn btn-outline-primary">REGISTER</button>
+                 </div>
+                 <div class="row">
+                     <p>Already have an account? <a href="login">Log in</a></p>
+                 </div>
+             </div>
+         </form>
+     </div>
+     <!-- Form end -->
+ </div>
+ <!-- Offcanvas end -->

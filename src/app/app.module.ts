@@ -8,8 +8,11 @@ import { AboutComponent } from './pages/about/about.component';
 import { MapComponent } from './pages/map/map.component';
 import { OpenlayerComponent } from './openlayer/openlayer.component';
 import { LoginComponent } from './sharepage/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
+import { RegisterComponent } from './sharepage/register/register.component';
+import { UserService } from './services/user.service';
+import { AlertifyService } from './services/alertify.service';
 
 @NgModule({
   declarations: [
@@ -20,14 +23,18 @@ import { AuthService } from './services/auth.service';
     MapComponent,
     OpenlayerComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     AuthService,
+    UserService,
+    AlertifyService,
   ],
   bootstrap: [AppComponent]
 })

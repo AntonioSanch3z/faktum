@@ -5,6 +5,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MapComponent } from './pages/map/map.component';
 import { LoginComponent } from './sharepage/login/login.component';
+import { RegisterComponent } from './sharepage/register/register.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'map', component:MapComponent},
   {path:'ol', component:OpenlayerComponent},
   {path:'login', component:LoginComponent},
+  {path:'register', component:RegisterComponent},
 ];
 
 @NgModule({

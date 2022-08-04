@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AlertifyService } from 'src/app/services/alertify.service';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent implements OnInit {
 
 
-  constructor(private authService: AuthService) { } //private alertify: AlertifyService
+  constructor(private authService: AuthService, private alertify: AlertifyService) { }
 
   ngOnInit(): void {
   }
@@ -20,9 +21,9 @@ export class LoginComponent implements OnInit {
     const token = this.authService.authUser(loginForm.value);
     if(token) {
       localStorage.setItem('token', token.userName)
-      console.log('Login successful'); //this.alertify.success('Login successful');
+      this.alertify.success('Login successful');
     } else {
-      console.log('Login not successful'); //this.alertify.error('Username or password incorrect');
+      this.alertify.error('Username or password are incorrect');
     }
   }
 
