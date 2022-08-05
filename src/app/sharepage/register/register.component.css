@@ -37,7 +37,7 @@ input {
     margin-top: 30px;
   }
   
-  .btn-outline-primary:hover {
+  .btn-outline-primary:hover, .btn-outline-primary:focus {
     background-color: #0d6dfd3b;
     right: 0px;
   }

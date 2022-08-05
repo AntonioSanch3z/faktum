@@ -18,4 +18,5 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem('token');
     this.router.navigate([''])
   }
+
 }

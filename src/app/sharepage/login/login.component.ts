@@ -10,7 +10,6 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-
   constructor(private authService: AuthService, private alertify: AlertifyService) { }
 
   ngOnInit(): void {
@@ -26,5 +25,5 @@ export class LoginComponent implements OnInit {
       this.alertify.error('Username or password are incorrect');
     }
   }
-  
+
 }
