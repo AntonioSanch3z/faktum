@@ -26,10 +26,5 @@ export class LoginComponent implements OnInit {
       this.alertify.error('Username or password are incorrect');
     }
   }
-
-  registerClick() {
-
-  }
-
   
 }
