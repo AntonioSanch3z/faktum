@@ -1,14 +1,13 @@
 input {
-    background-color: #1A2226;
+    background-color: #DDDADA;
     border: none;
-    border-bottom: 2px solid #0DB8DE;
+    border-bottom: 2px solid #0D6EFD;
     border-top: 0px;
     border-radius: 0px;
     font-weight: bold;
     outline: 0;
-    margin-bottom: 20px;
-    padding-left: 0px;
-    color: #ECF0F5;
+    padding-left: 5px;
+    margin-bottom: 30px;
   }
   
   
@@ -16,14 +15,12 @@ input {
     border-color: inherit;
     -webkit-box-shadow: none;
     box-shadow: none;
-    border-bottom: 2px solid #0DB8DE;
-    outline: 0;
-    background-color: #1A2226;
-    color: #ECF0F5;
+    border-bottom: 2px solid #0D6EFD;
+    background-color: #fff;
   }
   
   
-  .form-control-label {
+  .form-label {
     font-size: 10px;
     color: #6C6C6C;
     font-weight: bold;
@@ -31,8 +28,8 @@ input {
   }
   
   .btn-outline-primary {
-    border-color: #0DB8DE;
-    color: #0DB8DE;
+    border-color: #0D6EFD;
+    color: #0D6EFD;
     border-radius: 0px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -40,8 +37,14 @@ input {
   }
   
   .btn-outline-primary:hover {
-    background-color: #0DB8DE;
+    background-color: #0d6dfd3b;
     right: 0px;
+  }
+
+  .account {
+    margin-top: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
   }
   
   /*** Error msg ***/
@@ -50,5 +53,8 @@ input {
   }
 
   .error-block {
+    font-size: 10px;
     color: red;
+    font-weight: bold;
+    letter-spacing: 1px;
   }

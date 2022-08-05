@@ -14,4 +14,8 @@ export class AuthService {
     }
     return userArray.find((p: { userName: any; password: any; }) => p.userName === user.userName && p.password === user.password);
   }
+
+  isLoggedIn() {
+    return localStorage.getItem('token');
+  }
 }

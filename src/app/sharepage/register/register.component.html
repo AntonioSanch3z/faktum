@@ -2,7 +2,7 @@
  <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1"
  id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
  <div class="offcanvas-header">
-     <h2 id="offcanvasRightLabel" class="login-title">Register</h2>
+     <h2 id="offcanvasRightLabel" class="account">Register</h2>
      <button type="button" class="btn-close text-reset"
          data-bs-dismiss="offcanvas" aria-label="Close"></button>
  </div>
@@ -23,7 +23,7 @@
              <div>
                 <label for="confirmPassword" class="form-label">CONFIRM PASSWORD</label>
                 <input type="password" class="form-control" formControlName="confirmPassword">
-                <span *ngIf="!confirmPassword.valid && (username.touched || userSubmitted)">
+                <span *ngIf="!confirmPassword.valid && (username.touched || userSubmitted)" class="error-block">
                     <span *ngIf="confirmPassword.hasError('required')">Please confirm the pasword</span>
                 </span>
                 <span *ngIf="registrationForm.hasError('notmatched') && confirmPassword.valid">Passwords don't match</span>
@@ -34,7 +34,7 @@
                          class="btn btn-outline-primary">REGISTER</button>
                  </div>
                  <div class="row">
-                     <p>Already have an account? <a href="login">Log in</a></p>
+                     <p class="account">Already have an account? <a href="">Log in</a></p>
                  </div>
              </div>
          </form>
