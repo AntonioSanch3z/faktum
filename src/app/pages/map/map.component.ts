@@ -1,6 +1,13 @@
 import { AfterViewInit, Component } from '@angular/core';
-import * as L from 'leaflet';
-import { Map } from 'leaflet';
+import "ol/ol.css";
+import { Map, View } from "ol";
+import TileLayer from "ol/layer/Tile";
+import OSM from "ol/source/OSM";
+import { fromLonLat } from "ol/proj";
+import ImageWMS from "ol/source/ImageWMS";
+import { Image } from "ol/layer";
+//import * as L from 'leaflet';
+//import { Map } from 'leaflet';
 
 @Component({
   selector: 'app-map',
@@ -8,12 +15,96 @@ import { Map } from 'leaflet';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements AfterViewInit {
+  public map!: Map;
 
   constructor() { }
 
 
   ngAfterViewInit() {
-    var url0 = 'https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png';
+    /*this.map = new Map({
+      layers: [
+        new TileLayer({
+          source: new OSM(),
+        }),
+      ],
+      target: 'map',
+      view: new View({
+        center: fromLonLat([-0.37739,39.46975]),
+        zoom: 8, maxZoom: 18,
+      }),
+    });*/
+
+    const Mivista = new View({
+      center: fromLonLat([-0.37739,39.46975]),
+      zoom: 8,
+    });
+
+    const cv0 = new Image({
+      source: new ImageWMS({
+        url: "http://localhost:8080/geoserver/wms",
+        params: {
+          LAYERS: "cv4",
+          FORMAT: "image/png",
+        },
+      }),
+    });
+
+    const cv1 = new Image({
+      source: new ImageWMS({
+        url: "http://localhost:8080/geoserver/wms",
+        params: {
+          LAYERS: "cv1",
+          FORMAT: "image/png",
+        },
+      }),
+    });
+
+    const cv2 = new Image({
+      source: new ImageWMS({
+        url: "http://localhost:8080/geoserver/wms",
+        params: {
+          LAYERS: "cv2",
+          FORMAT: "image/png",
+        },
+      }),
+    });
+
+    const cv3 = new Image({
+      source: new ImageWMS({
+        url: "http://localhost:8080/geoserver/wms",
+        params: {
+          LAYERS: "cv3",
+          FORMAT: "image/png",
+        },
+      }),
+    });
+
+    const map0 = new Map({
+      target: "map0",
+      layers: [
+        new TileLayer({
+          source: new OSM(),
+        }), cv0
+      ],
+      // renderer: "canvas",
+      view: Mivista,
+    });
+    Mivista.setZoom(7);
+
+    const map1 = new Map({
+      target: "map1",
+      layers: [
+        new TileLayer({
+          source: new OSM(),
+        }), cv1
+      ],
+      // renderer: "canvas",
+      view: Mivista,
+    });
+    Mivista.setZoom(7);
+
+    
+    /*var url0 = 'https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png';
     var url1 = 'http://localhost:8080/geoserver/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv2&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=image%2Fpng';
     var url2 = 'https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png';
     var url3 = 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png';
@@ -47,7 +138,7 @@ export class MapComponent implements AfterViewInit {
     boton3!.addEventListener("click", function() {
       map1.removeLayer(map1Layer);
       map1Layer = L.tileLayer(url3, { maxZoom: 20, attribution: 'Día tres' }).addTo(map1);
-    })
+    })*/
 
   }
 }
@@ -68,9 +159,4 @@ http://localhost:8080/geoserver/tfg/wms?service=WMS&version=1.1.0&request=GetMap
 cv3 (diaTres)
 http://localhost:8080/geoserver/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv3&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=application/openlayers
 
-
-El bloqueo de lectura entre orígenes (CORB) ha bloqueado la respuesta entre orígenes 
-http://localhost:8080/geoserver/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv4&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=application/openlayers
- con tipo MIME text/html. Consulte https://www.chromestatus.com/feature/5629709824032768 
- para obtener más detalles.
 */

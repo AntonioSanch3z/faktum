@@ -18,6 +18,8 @@
   margin-top: 20px;
 }
 
+/* ------- Buttons ------- */
+
 /* Triggered when screen size becomes >=990px */
 @media (min-width: 990px) {
   .buttonGroup {
