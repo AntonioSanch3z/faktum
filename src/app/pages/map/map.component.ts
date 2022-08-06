@@ -6,6 +6,9 @@ import OSM from "ol/source/OSM";
 import { fromLonLat } from "ol/proj";
 import ImageWMS from "ol/source/ImageWMS";
 import { Image } from "ol/layer";
+import LayerGroup from 'ol/layer/Group';
+import {Attribution, defaults as defaultControls} from 'ol/control';
+
 //import * as L from 'leaflet';
 //import { Map } from 'leaflet';
 
@@ -34,9 +37,16 @@ export class MapComponent implements AfterViewInit {
       }),
     });*/
 
+    const vlcLayer = new TileLayer({source: new OSM()})
+    const vlcLayer1 = new TileLayer({source: new OSM()})
+
     const Mivista = new View({
       center: fromLonLat([-0.37739,39.46975]),
-      zoom: 8,
+      zoom: 7,
+    });
+
+    const attribution = new Attribution({
+      collapsible: false,
     });
 
     const cv0 = new Image({
@@ -81,27 +91,87 @@ export class MapComponent implements AfterViewInit {
 
     const map0 = new Map({
       target: "map0",
-      layers: [
-        new TileLayer({
-          source: new OSM(),
-        }), cv0
-      ],
-      // renderer: "canvas",
+      layers: [vlcLayer, cv0],
+      /*controls: ol.control.defaults({
+          attributionOptions: {
+            target: document.getElementById('myattribution'),
+            className: 'myCustomClass'
+          }
+        }),*/
       view: Mivista,
     });
-    Mivista.setZoom(7);
 
     const map1 = new Map({
       target: "map1",
-      layers: [
-        new TileLayer({
-          source: new OSM(),
-        }), cv1
-      ],
-      // renderer: "canvas",
+      layers: [vlcLayer1, cv1],
       view: Mivista,
     });
-    Mivista.setZoom(7);
+
+    var boton0 = document.getElementById('0')
+    boton0!.addEventListener("click", function() {
+      map1.removeLayer(cv0);
+      map1.removeLayer(cv1);
+      map1.removeLayer(cv2);
+      map1.removeLayer(cv3);
+      map1.addLayer(cv0);
+    })
+
+    var boton1 = document.getElementById('1')
+    boton1!.addEventListener("click", function() {
+      map1.removeLayer(cv0);
+      map1.removeLayer(cv1);
+      map1.removeLayer(cv2);
+      map1.removeLayer(cv3);
+      map1.addLayer(cv1);
+    })
+
+    var boton2 = document.getElementById('2')
+    boton2!.addEventListener("click", function() {
+      map1.removeLayer(cv0);
+      map1.removeLayer(cv2);
+      map1.removeLayer(cv1);
+      map1.removeLayer(cv3);
+      map1.addLayer(cv2);
+    })
+
+    var boton3 = document.getElementById('3')
+    boton3!.addEventListener("click", function() {
+      map1.removeLayer(cv0);
+      map1.removeLayer(cv1);
+      map1.removeLayer(cv2);
+      map1.removeLayer(cv3);
+      map1.addLayer(cv3);
+    })
+
+
+    /*const map = new Map({
+      target: 'map',
+      layers: [
+        new LayerGroup({
+          layers: [vlcLayer1, cv1, cv2, cv3],
+        }),
+      ],
+      view: Mivista,
+    });
+
+    function bindInputs(layerid, layer) {
+      const visibilityInput = $(layerid + ' input.visible');
+      visibilityInput.on('change', function () {
+        layer.setVisible(this.checked);
+      });
+      visibilityInput.prop('checked', layer.getVisible());
+
+      function setup(id, group) {
+        group.getLayers().forEach(function (layer, i) {
+          const layerid = id + i;
+          bindInputs(layerid, layer);
+          if (layer instanceof LayerGroup) {
+            setup(layerid, layer);
+          }
+        });
+      }
+      setup('#layer', map.getLayerGroup());*/
+
 
     
     /*var url0 = 'https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png';

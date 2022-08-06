@@ -14,6 +14,7 @@
 }*/
 
 #map0, #map1 {
+  margin-left: 10px;
   height: 600px;
   margin-top: 20px;
 }
@@ -52,7 +53,7 @@
   font-family: sans-serif;
   font-weight: 600;
   border: 3px solid;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px;
   position: relative;
   user-select: none;
   -webkit-user-select: none;
@@ -61,6 +62,42 @@
 
 .btnStl:active {
   box-shadow: 0px 0px 0px 0px;
-  top: 5px;
+  top: 2px;
+  left: 2px;
+}
+
+/*.ol-attribution {
   left: 5px;
 }
+
+.ol-control,
+.ol-control:hover {
+    background-color: transparent !important;
+    padding: unset !important;
+}
+
+button {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    margin: 5px !important;
+    cursor: pointer !important;
+    height: 36px !important;
+    width: 36px !important;
+    color: white !important;
+    background-color: rgb(110, 209, 86) !important;
+    box-shadow: black 0 3px 3px !important;
+   
+}
+
+button :hover{
+  background-color: rgb(135, 250, 107) !important;
+} 
+
+button:focus {
+    background-color: rgb(135, 250, 107) !important;
+}
+
+.zoom-control {
+    bottom: 0.5em;
+    right: 0.5em;
+}*/
