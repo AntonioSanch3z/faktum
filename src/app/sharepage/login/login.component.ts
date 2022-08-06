@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AlertifyService } from 'src/app/services/alertify.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  
   constructor(private authService: AuthService, private alertify: AlertifyService) { }
 
   ngOnInit(): void {
@@ -25,5 +25,5 @@ export class LoginComponent implements OnInit {
       this.alertify.error('Username or password are incorrect');
     }
   }
-
+  
 }

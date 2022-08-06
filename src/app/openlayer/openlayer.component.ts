@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-/*import "ol/ol.css";
+import "ol/ol.css";
 import { Map, View } from "ol";
 import TileLayer from "ol/layer/Tile";
 import OSM from "ol/source/OSM";
 import { fromLonLat } from "ol/proj";
 import ImageWMS from "ol/source/ImageWMS";
-import { Image } from "ol/layer";*/
+import { Image } from "ol/layer";
 
 @Component({
   selector: 'app-openlayer',
@@ -14,7 +14,7 @@ import { Image } from "ol/layer";*/
 })
 export class OpenlayerComponent implements OnInit {
 
-  //public map!: Map;
+  public map!: Map;
 
   constructor() { }
 
@@ -33,7 +33,7 @@ export class OpenlayerComponent implements OnInit {
     // });
 
 
-    /*const Mivista = new View({
+    const Mivista = new View({
       center: fromLonLat([-0.37739,39.46975]),
       zoom: 8,
     });
@@ -42,7 +42,7 @@ export class OpenlayerComponent implements OnInit {
       source: new ImageWMS({
         url: "http://localhost:8080/geoserver/wms",
         params: {
-          LAYERS: "cv2",
+          LAYERS: "cv1",
           FORMAT: "image/png",
         },
       }),
@@ -58,7 +58,7 @@ export class OpenlayerComponent implements OnInit {
       // renderer: "canvas",
       view: Mivista,
     });
-    Mivista.setZoom(7);*/
+    Mivista.setZoom(7);
   }
 
 }

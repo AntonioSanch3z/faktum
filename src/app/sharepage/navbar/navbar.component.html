@@ -7,10 +7,10 @@
         </a>
     </div>
         <div class="d-flex align-items-center justify-content-end flex-row-reverse">
-            <a *ngIf="!authService.isLoggedIn()" href="" routerLinkActive="active-link" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-box-arrow-in-right d-block d-md-none"></i><span class="d-none d-md-block"> Log in</span></a> <!-- *ngIf="isLoggedIn()" -->
-            <a *ngIf="authService.isLoggedIn()" (click)="onLogout()" href="" routerLinkActive="active-link" class="nav-link"><i class="bi bi-box-arrow-left d-block d-md-none"></i><span class="d-none d-md-block"> Log out</span></a> <!-- *ngIf="!isLoggedIn()" -->
+            <a *ngIf="!authService.isLoggedIn()" href="" routerLinkActive="active-link" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-box-arrow-in-right d-block d-md-none"></i><span class="d-none d-md-block"> Log in</span></a>
+            <a *ngIf="authService.isLoggedIn()" (click)="onLogout()" href="" routerLinkActive="active-link" class="nav-link"><i class="bi bi-box-arrow-left d-block d-md-none"></i><span class="d-none d-md-block"> Log out</span></a>
             <a routerLink="about" routerLinkActive="active-link" class="nav-link"><i class="bi bi-info-circle-fill d-block d-md-none"></i><span class="d-none d-md-block"> About</span></a>
-            <a *ngIf="authService.isLoggedIn()" routerLink="map" routerLinkActive="active-link" class="nav-link"><i class="bi bi-map-fill d-block d-md-none"></i><span class="d-none d-md-block"> Map</span></a> <!-- *ngIf="!isLoggedIn()" -->
+            <a *ngIf="authService.isLoggedIn()" routerLink="map" routerLinkActive="active-link" class="nav-link"><i class="bi bi-map-fill d-block d-md-none"></i><span class="d-none d-md-block"> Map</span></a>
         <!-- Offcanvas -->
         <app-login></app-login>
         <app-register></app-register>

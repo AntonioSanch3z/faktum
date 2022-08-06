@@ -9,6 +9,13 @@ input {
     padding-left: 5px;
   }
   
+  a {
+    color: #0D6EFD;
+  }
+  
+  a:hover, a:focus {
+    color: #0DB1FD;
+  }  
   
   .form-control:focus {
     border-color: inherit;
@@ -38,7 +45,7 @@ input {
   }
   
   .btn-outline-primary:hover, .btn-outline-primary:focus {
-    background-color: #0d6dfd3b;
+    background-color: #0D6DFD3B;
     right: 0px;
   }
 

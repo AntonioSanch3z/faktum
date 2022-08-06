@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -8,8 +8,10 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  showLogin:boolean = true;
 
-  constructor(private router: Router, public authService: AuthService) { }
+  constructor(private router: Router, public authService: AuthService) {
+   }
 
   ngOnInit(): void {
   }
@@ -17,6 +19,10 @@ export class NavbarComponent implements OnInit {
   onLogout() {
     localStorage.removeItem('token');
     this.router.navigate([''])
+  }
+
+  toggleLogin() {
+    this.showLogin = !this.showLogin;
   }
 
 }
