@@ -1,23 +1,16 @@
-/*#map0, #map1 {
-    height: 768px;
-    width: 579px;
-    /*height: 50vh;
-    width: 37.7vw;*
-  }*/
 /*
 579/768 = 0,75390625
 */
-/*#map0, #map1 {
-    position: absolute;
-    width: 40%;
-    height: 50%;
-}*/
 
 #map0, #map1 {
   margin-left: 10px;
-  height: 600px;
-  margin-top: 20px;
+  margin-top: 15px;
+  height: 690px;
+  /*height: 768px;*/
+  /*aspect-ratio: 0.75;*/
 }
+
+
 
 /* ------- Buttons ------- */
 
@@ -32,7 +25,6 @@
       margin: 10px;
     }
 }
-
 
 /* Triggered when screen size becomes <=990px */
 @media (max-width: 990px) {
@@ -65,39 +57,3 @@
   top: 2px;
   left: 2px;
 }
-
-/*.ol-attribution {
-  left: 5px;
-}
-
-.ol-control,
-.ol-control:hover {
-    background-color: transparent !important;
-    padding: unset !important;
-}
-
-button {
-    font-size: 16px !important;
-    font-weight: 500 !important;
-    margin: 5px !important;
-    cursor: pointer !important;
-    height: 36px !important;
-    width: 36px !important;
-    color: white !important;
-    background-color: rgb(110, 209, 86) !important;
-    box-shadow: black 0 3px 3px !important;
-   
-}
-
-button :hover{
-  background-color: rgb(135, 250, 107) !important;
-} 
-
-button:focus {
-    background-color: rgb(135, 250, 107) !important;
-}
-
-.zoom-control {
-    bottom: 0.5em;
-    right: 0.5em;
-}*/

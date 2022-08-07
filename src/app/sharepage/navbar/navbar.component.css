@@ -8,14 +8,21 @@
 }
 
 a {
-  margin: 10px 20px;
+  margin: 10px 40px;
   padding: 10px 20px;
   font-size: 17;
   font-weight: 400;
 }
 
-/* Triggered when screen size becomes <=480px */
-@media (max-width: 480px) {
+/* Triggered when screen size becomes <=830px */
+@media (max-width: 830px) {
+  a {
+    margin: 10px 30px;
+  }
+}
+
+/* Triggered when screen size becomes <=520px */
+@media (max-width: 520px) {
   a {
     margin: 7px 15px;
     padding: 7px 15px;

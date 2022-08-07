@@ -1,7 +1,13 @@
-.container {
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100vh;
-    overflow: hidden;
-    background-position: center;
-    background-size: cover;
+.map-container {
+  height: 768px;
+  width: 579px;
+}
+
+.map-frame {
+  border: 5px solid black;
+  height: 100%;
+}
+
+#map {
+  height: 100%;
 }
