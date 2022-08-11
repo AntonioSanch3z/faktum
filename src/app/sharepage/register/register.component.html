@@ -17,12 +17,12 @@
              </div>
              <div>
                  <label for="password" class="form-label">PASSWORD</label>
-                 <input type="password" class="form-control" formControlName="password">
+                 <input type="password" class="form-control" formControlName="password" autocomplete="on">
                  <span *ngIf="!password.valid && (password.touched || userSubmitted)" class="error-block">Please enter a password</span>
              </div>
              <div>
                 <label for="confirmPassword" class="form-label">CONFIRM PASSWORD</label>
-                <input type="password" class="form-control" formControlName="confirmPassword">
+                <input type="password" class="form-control" formControlName="confirmPassword" autocomplete="on">
                 <span *ngIf="!confirmPassword.valid && (confirmPassword.touched || userSubmitted)" class="error-block">
                     <span *ngIf="confirmPassword.hasError('required')">Please confirm the pasword</span>
                 </span>

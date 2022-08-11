@@ -1,16 +1,11 @@
-/*
-579/768 = 0,75390625
-*/
-
 #map0, #map1 {
   margin-left: 10px;
   margin-top: 15px;
   height: 690px;
   /*height: 768px;*/
   /*aspect-ratio: 0.75;*/
+  /* 579/768 = 0,75390625 */
 }
-
-
 
 /* ------- Buttons ------- */
 
@@ -56,4 +51,8 @@
   box-shadow: 0px 0px 0px 0px;
   top: 2px;
   left: 2px;
+}
+
+.btnStl:focus {
+  background-color: #0DB1FD;
 }

@@ -1,32 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
-import { Map } from 'leaflet';
+import { Map, control } from 'leaflet';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements AfterViewInit {
 
   //private map!: L.Map;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     var url0 = '/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv4&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=image%2Fpng';
-    var url1= '/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv1&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=image%2Fpng';
-    var url2 = '/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv2&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=image%2Fpng';
-    var url3 = '/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv3&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=image%2Fpng';
 
-    const map = new Map('map').setView([39.46, -0.37], 8);
-    L.tileLayer(url0, { maxZoom: 25, attribution: 'Sin estilo', tileSize: 579 }).addTo(map);
+    const map = new Map('map', { zoomControl: false, doubleClickZoom: false, scrollWheelZoom: false, 
+      touchZoom: false, attributionControl: false, /*dragging: false*/ }).setView([39.46975, -0.37739], 1);
+    L.tileLayer(url0, { /*attribution: 'Sin estilo',*/ noWrap: true, /*tileSize: 579,*/ }).addTo(map);
+    map.setMaxBounds([[40.712216, -74.22655], [40.773941, -74.12544]]);
+
+    setTimeout(function(){ map.invalidateSize()}, 400);
   }
 
   /*mapURLBase:string = '/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv4&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=image%2Fpng';
   mapURL:string = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-
   imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
+
 
   private initMap(): void {
     this.map = L.map('map', {
@@ -52,6 +53,10 @@ export class HomeComponent implements OnInit {
 
 
 /* 
+    var url1= '/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv1&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=image%2Fpng';
+    var url2 = '/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv2&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=image%2Fpng';
+    var url3 = '/tfg/wms?service=WMS&version=1.1.0&request=GetMap&layers=tfg%3Acv3&bbox=-1.540045738220215%2C37.82905197143555%2C0.702328443527222%2C40.8033561706543&width=579&height=768&srs=EPSG%3A4326&styles=&format=image%2Fpng';
+
     const map0 = new Map('map0').setView([39.46, -0.37], 13);
     L.tileLayer(url0, { maxZoom: 20, attribution: 'Sin estilo' }).addTo(map0);
 
