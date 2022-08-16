@@ -13,4 +13,8 @@
 #map {
   height: 100%;
   position: relative;
+  /*height: 690px;*/
+  /*height: 768px;*/
+  /*aspect-ratio: 0.75;*/
+  /* 579/768 = 0,75390625 */
 }
