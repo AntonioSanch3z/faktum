@@ -14,6 +14,11 @@ a {
   font-weight: 400;
 }
 
+a:hover, a:focus, .active-link {
+  color: #0D6EFD;
+}
+
+
 /* Triggered when screen size becomes <=830px */
 @media (max-width: 830px) {
   a {
