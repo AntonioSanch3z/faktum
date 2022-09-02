@@ -4,14 +4,12 @@
   /*height: 690px;*/
   /*height: 768px;*/
   /*aspect-ratio: 0.75;*/
-  /* 579/768 = 0,75390625 */
 }
 
 /* Triggered when screen size becomes <=575px 
 @media (max-width: 575px) {
   #map1 {
     height: 600px;
-
   }
 } /*690 se deberia mostrar un mapa*/
 
@@ -36,10 +34,11 @@
   buttonGroup {
     display: inline-block;
     position: relative;
-    width: 100%;
   }
   .dayBtn {
     margin: 5px;
+    height: 80px;
+    width: 100px;
   }
 }
 
